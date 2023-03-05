@@ -33,8 +33,13 @@ export default function BlogId({ blog }:Props) {
   return(
     <main>
       <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+      <img src={blog.image?.url} alt="" />
+      <p>{`投稿日 : ${blog.publishedAt.substr(0,4)}/${blog.publishedAt.substr(5,2)}/${blog.publishedAt.substr(8,2)}`}</p>
       <div dangerouslySetInnerHTML={{ __html: blog.body }}></div>
+      {/* <Typography variant="body2" color="textSecondary" component="div">
+                    {ReactHTMLParser(blog.body)}
+                  </Typography> */}
+
     </main>
   )
 }
